@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Café - Add Product</title>
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-4 pb-10">
+    <div class="max-w-3xl mx-auto pt-8">
+      <nav class="flex items-center justify-between">
+        <a href="./index.html" class="text-xl font-black text-slate-900">POS Café</a>
+        <div class="flex gap-3 text-sm font-semibold text-slate-600">
+          <a href="./products.html">Products</a>
+          <a href="./add-product.html" class="text-indigo-600">Add Product</a>
+          <a href="./add-product-ai.html">Add via AI</a>
+        </div>
+      </nav>
+
+      <header class="mt-8">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Manual flow</p>
+        <h1 id="form-heading" class="text-3xl font-bold text-slate-900">Add new product</h1>
+        <p class="text-slate-500 text-sm">Price and stock are validated both client and server side.</p>
+      </header>
+
+      <form id="product-form" class="glass-panel p-5 mt-5 space-y-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700">Name</label>
+          <input id="name" class="w-full mt-1 rounded-lg border border-slate-200 px-3 py-2" required />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700">Category</label>
+          <input id="category" class="w-full mt-1 rounded-lg border border-slate-200 px-3 py-2" placeholder="e.g., Coffee" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700">Price (IDR)</label>
+            <input
+              id="price"
+              type="number"
+              min="1"
+              class="w-full mt-1 rounded-lg border border-slate-200 px-3 py-2"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700">Stock</label>
+            <input
+              id="stock"
+              type="number"
+              min="0"
+              class="w-full mt-1 rounded-lg border border-slate-200 px-3 py-2"
+              value="0"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="is_active" class="h-4 w-4" checked />
+          <label for="is_active" class="text-sm text-slate-700">Active product</label>
+        </div>
+        <button id="submit-btn" type="submit" class="btn-primary">Save product</button>
+      </form>
+    </div>
+
+    <div id="toast-container"></div>
+    <script type="module" src="../src/js/add-product-page.js"></script>
+  </body>
+</html>

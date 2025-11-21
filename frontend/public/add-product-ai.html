@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Café - Add via AI</title>
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-4 pb-10">
+    <div class="max-w-5xl mx-auto pt-8">
+      <nav class="flex items-center justify-between">
+        <a href="./index.html" class="text-xl font-black text-slate-900">POS Café</a>
+        <div class="flex gap-3 text-sm font-semibold text-slate-600">
+          <a href="./products.html">Products</a>
+          <a href="./add-product.html">Add Product</a>
+          <a href="./add-product-ai.html" class="text-indigo-600">Add via AI</a>
+        </div>
+      </nav>
+
+      <header class="mt-8">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">AI flow</p>
+        <h1 class="text-3xl font-bold text-slate-900">Batch-create menu items</h1>
+        <p class="text-slate-500 text-sm">
+          Example: "Add iced coffee 22000 stock 30, hot latte 25000 stock 15, and chocolate croissant 18000 stock 20"
+        </p>
+      </header>
+
+      <section class="mt-5 glass-panel p-5">
+        <form id="ai-form" class="space-y-3">
+          <label class="block text-sm font-semibold text-slate-700">Instruction</label>
+          <textarea
+            id="instruction"
+            rows="4"
+            class="w-full rounded-lg border border-slate-200 px-3 py-2"
+            placeholder="Add ..."
+            required
+          ></textarea>
+          <button class="btn-primary w-full md:w-auto" type="submit">Generate from AI</button>
+        </form>
+      </section>
+
+      <section class="mt-5 grid md:grid-cols-2 gap-4">
+        <div class="glass-panel p-4">
+          <h3 class="text-lg font-bold text-emerald-700">Inserted</h3>
+          <div id="inserted-list" class="mt-3"></div>
+        </div>
+        <div class="glass-panel p-4">
+          <h3 class="text-lg font-bold text-rose-700">Failed</h3>
+          <div id="failed-list" class="mt-3"></div>
+        </div>
+      </section>
+
+      <section id="logs-container" class="mt-6 hidden">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Recent AI logs</p>
+        <div id="logs-list" class="mt-2"></div>
+      </section>
+    </div>
+
+    <div id="toast-container"></div>
+    <script type="module" src="../src/js/add-product-ai-page.js"></script>
+  </body>
+</html>

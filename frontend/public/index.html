@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Café - Dashboard</title>
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-4 pb-10">
+    <header class="max-w-5xl mx-auto pt-10 flex items-center justify-between">
+      <div>
+        <p class="text-sm uppercase tracking-[0.25em] text-slate-500">POS Café</p>
+        <h1 class="text-4xl font-black text-slate-900 mt-2">Menu control, accelerated.</h1>
+        <p class="text-slate-500 mt-2 max-w-2xl">
+          Manage café products effortlessly. Add items by hand or drop an instruction and let AI structure them for you.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="btn-primary" href="./products.html">View products</a>
+          <a class="btn-primary" style="background: linear-gradient(120deg, #06b6d4, #0891b2)" href="./add-product-ai.html">
+            Add via AI
+          </a>
+        </div>
+      </div>
+      <div class="glass-panel hidden md:block p-6 w-[320px]">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Highlights</p>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>• Manual CRUD with validation</li>
+          <li>• AI-assisted batch insertion</li>
+          <li>• Product deactivation (soft delete)</li>
+          <li>• AI logs for auditing</li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto mt-10 grid md:grid-cols-3 gap-4">
+      <div class="card-cta">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Manual</p>
+        <h3 class="text-xl font-bold mt-2 text-slate-900">Add a single product</h3>
+        <p class="text-slate-600 text-sm mt-1">Clean form with price + stock validation.</p>
+        <a href="./add-product.html" class="inline-flex mt-3 text-indigo-600 font-semibold">Open form →</a>
+      </div>
+      <div class="card-cta">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">AI</p>
+        <h3 class="text-xl font-bold mt-2 text-slate-900">Speed up batch creation</h3>
+        <p class="text-slate-600 text-sm mt-1">Paste your instruction, we parse, validate, and insert.</p>
+        <a href="./add-product-ai.html" class="inline-flex mt-3 text-indigo-600 font-semibold">Try the AI flow →</a>
+      </div>
+      <div class="card-cta">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Overview</p>
+        <h3 class="text-xl font-bold mt-2 text-slate-900">Track everything</h3>
+        <p class="text-slate-600 text-sm mt-1">See product states and AI logs from one place.</p>
+        <a href="./products.html" class="inline-flex mt-3 text-indigo-600 font-semibold">Go to table →</a>
+      </div>
+    </main>
+  </body>
+</html>

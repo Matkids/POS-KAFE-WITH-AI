@@ -1,0 +1,26 @@
+.DS_Store
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*.pyo
+*.orig
+*.log
+*.sqlite3
+db.sqlite3
+/backend/staticfiles/
+/backend/media/
+
+# Environments
+.env
+.env.*
+venv/
+
+# Node / frontend (in case installed later)
+node_modules/
+dist/
+build/
+
+# Tooling
+.vscode/
+.idea/

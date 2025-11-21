@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Café - Products</title>
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-4 pb-10">
+    <div class="max-w-6xl mx-auto pt-8">
+      <nav class="flex items-center justify-between">
+        <a href="./index.html" class="text-xl font-black text-slate-900">POS Café</a>
+        <div class="flex gap-3 text-sm font-semibold text-slate-600">
+          <a href="./products.html" class="text-indigo-600">Products</a>
+          <a href="./add-product.html">Add Product</a>
+          <a href="./add-product-ai.html">Add via AI</a>
+        </div>
+      </nav>
+
+      <header class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Products</p>
+          <h1 class="text-3xl font-bold text-slate-900">Live menu inventory</h1>
+          <p class="text-slate-500 text-sm">Edit, deactivate, or batch-create items in one view.</p>
+        </div>
+        <div class="flex gap-2">
+          <a class="btn-primary" href="./add-product.html">Add product</a>
+          <a class="btn-primary" style="background: linear-gradient(120deg, #06b6d4, #0891b2)" href="./add-product-ai.html">
+            Add via AI
+          </a>
+        </div>
+      </header>
+
+      <section class="mt-6 glass-panel p-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div>
+            <label class="text-xs uppercase text-slate-500">Filter</label>
+            <select id="filter-status" class="mt-1 border border-slate-200 rounded-lg px-3 py-2 bg-white">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <button id="refresh-button" class="text-sm font-semibold text-indigo-600">Refresh</button>
+        </div>
+
+        <div class="table-wrapper mt-4 overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="product-table-body"></tbody>
+          </table>
+        </div>
+        <div id="empty-state" class="text-center text-slate-500 py-6 hidden">No products yet.</div>
+      </section>
+    </div>
+
+    <div id="toast-container"></div>
+    <script type="module" src="../src/js/products-page.js"></script>
+  </body>
+</html>
